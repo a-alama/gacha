@@ -617,7 +617,7 @@ function getDrawCooldown() {
 
 function getDrawAmount() {
     let count = Math.floor(effects.bulk) + getUsedEnergy();
-    count = Math.floor(count * effects.bulkMult * effects.bulkMultBonus);
+    count = Math.floor(count * effects.bulkMult * effects.bulkMultBonus * 10);
     if (game.drawPref.skills.water && game.res.energy >= effects.energyCap) count = Math.floor(count * effects.skillWaterCard2);
     if (game.drawPref.faction) count = Math.floor(count * effects[game.drawPref.faction + "DrawMult"]);
     count = Math.min(count, MAX_CARDS - game.stats.cardsDrawn);
